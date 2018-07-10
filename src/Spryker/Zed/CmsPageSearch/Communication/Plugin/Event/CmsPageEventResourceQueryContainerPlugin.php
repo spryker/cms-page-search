@@ -19,7 +19,7 @@ use Spryker\Zed\Kernel\Communication\AbstractPlugin;
  * @method \Spryker\Zed\CmsPageSearch\Business\CmsPageSearchFacadeInterface getFacade()
  * @method \Spryker\Zed\CmsPageSearch\Communication\CmsPageSearchCommunicationFactory getFactory()
  */
-class CmsPageEventResourcePlugin extends AbstractPlugin implements EventResourceQueryContainerPluginInterface
+class CmsPageEventResourceQueryContainerPlugin extends AbstractPlugin implements EventResourceQueryContainerPluginInterface
 {
     /**
      * Specification:
