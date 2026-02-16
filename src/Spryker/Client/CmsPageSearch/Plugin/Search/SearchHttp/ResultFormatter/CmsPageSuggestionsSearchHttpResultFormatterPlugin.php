@@ -61,6 +61,7 @@ class CmsPageSuggestionsSearchHttpResultFormatterPlugin extends AbstractPlugin i
     public function formatResult($searchResult, array $requestParameters = [])
     {
         $formattedResult = [];
+        /** @phpstan-ignore instanceof.alwaysTrue */
         if ($searchResult instanceof SuggestionsSearchHttpResponseTransfer) {
             $formattedResult = $searchResult->getMatchedItemsBySourceIdentifiers()[static::CMS_PAGE_SOURCE_IDENTIFIER] ?? [];
         }
