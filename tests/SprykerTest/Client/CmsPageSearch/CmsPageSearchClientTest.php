@@ -10,6 +10,7 @@ declare(strict_types = 1);
 namespace SprykerTest\Client\CmsPageSearch;
 
 use Codeception\Test\Unit;
+use Elastica\ResultSet;
 use PHPUnit\Framework\MockObject\MockObject;
 use Spryker\Client\CmsPageSearch\CmsPageSearchClient;
 use Spryker\Client\CmsPageSearch\CmsPageSearchConfig;
@@ -18,7 +19,6 @@ use Spryker\Client\CmsPageSearch\Dependency\Client\CmsPageSearchToSearchBridgeIn
 use Spryker\Client\SearchExtension\Dependency\Plugin\QueryInterface;
 use Spryker\Client\SearchExtension\Dependency\Plugin\SearchResultCountPluginInterface;
 use Spryker\Shared\Kernel\StrategyResolver;
-use stdClass;
 
 /**
  * Auto-generated group annotations
@@ -412,10 +412,8 @@ class CmsPageSearchClientTest extends Unit
     {
         $mock = $this->getMockBuilder(QueryInterface::class)
             ->onlyMethods(['getSearchQuery'])
-            ->addMethods(['getSearchType'])
             ->getMock();
         $mock->method('getSearchQuery')->willReturn($this->createMock('\Elastica\Query'));
-        $mock->method('getSearchType')->willReturn($searchType);
 
         return $mock;
     }
@@ -439,13 +437,11 @@ class CmsPageSearchClientTest extends Unit
     /**
      * @param int $totalHits
      *
-     * @return \PHPUnit\Framework\MockObject\MockObject|\stdClass
+     * @return \Elastica\ResultSet
      */
-    protected function createSearchResultObjectMock(int $totalHits): stdClass
+    protected function createSearchResultObjectMock(int $totalHits): ResultSet
     {
-        $searchResultMock = $this->getMockBuilder('stdClass')
-            ->addMethods(['getTotalHits'])
-            ->getMock();
+        $searchResultMock = $this->createMock(ResultSet::class);
         $searchResultMock->method('getTotalHits')->willReturn($totalHits);
 
         return $searchResultMock;
