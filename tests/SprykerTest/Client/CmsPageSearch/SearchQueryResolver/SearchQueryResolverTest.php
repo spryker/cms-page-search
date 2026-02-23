@@ -165,12 +165,8 @@ class SearchQueryResolverTest extends Unit
      */
     protected function createQueryWithApplicabilityMock(bool $isApplicable): QueryInterface
     {
-        $mock = $this->getMockBuilder(QueryInterface::class)
-            ->onlyMethods(['getSearchQuery'])
-            ->addMethods(['isApplicable'])
-            ->getMock();
+        $mock = $this->createMock(QueryInterface::class);
         $mock->method('getSearchQuery')->willReturn($this->createMock('\Elastica\Query'));
-        $mock->method('isApplicable')->willReturn($isApplicable);
 
         return $mock;
     }
