@@ -147,9 +147,6 @@ class SearchQueryResolverTest extends Unit
         ];
     }
 
-    /**
-     * @return \PHPUnit\Framework\MockObject\MockObject|\Spryker\Client\SearchExtension\Dependency\Plugin\QueryInterface
-     */
     protected function createQueryMock(): MockObject|QueryInterface
     {
         $mock = $this->createMock(QueryInterface::class);

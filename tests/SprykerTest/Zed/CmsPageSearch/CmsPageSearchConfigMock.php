@@ -11,9 +11,6 @@ use Spryker\Zed\CmsPageSearch\CmsPageSearchConfig;
 
 class CmsPageSearchConfigMock extends CmsPageSearchConfig
 {
-    /**
-     * @return bool
-     */
     public function isSendingToQueue(): bool
     {
         return false;

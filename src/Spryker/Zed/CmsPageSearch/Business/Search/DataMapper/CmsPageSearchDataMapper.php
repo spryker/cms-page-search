@@ -94,9 +94,6 @@ class CmsPageSearchDataMapper implements CmsPageSearchDataMapperInterface
      */
     protected $storeFacade;
 
-    /**
-     * @param \Spryker\Zed\CmsPageSearch\Dependency\Facade\CmsPageSearchToStoreFacadeInterface $storeFacade
-     */
     public function __construct(
         CmsPageSearchToStoreFacadeInterface $storeFacade
     ) {
@@ -179,9 +176,6 @@ class CmsPageSearchDataMapper implements CmsPageSearchDataMapperInterface
         return isset($data[static::KEY_VALID_TO]) ? (new DateTime($data[static::KEY_VALID_TO]))->format(static::DATE_FORMAT) : null;
     }
 
-    /**
-     * @return string
-     */
     protected function getStoreName(): string
     {
         return $this->storeFacade->getCurrentStore()->getNameOrFail();

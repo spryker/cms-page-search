@@ -36,9 +36,6 @@ class CmsPageSortConfigBuilder implements SortConfigBuilderInterface
      */
     protected $sortParamKey;
 
-    /**
-     * @param string $sortParamName
-     */
     public function __construct(string $sortParamName = self::DEFAULT_SORT_PARAM_KEY)
     {
         $this->sortParamKey = $sortParamName;
@@ -58,11 +55,6 @@ class CmsPageSortConfigBuilder implements SortConfigBuilderInterface
         return $this;
     }
 
-    /**
-     * @param string|null $parameterName
-     *
-     * @return \Generated\Shared\Transfer\SortConfigTransfer|null
-     */
     public function getSortConfigTransfer(?string $parameterName): ?SortConfigTransfer
     {
         return $this->sortConfigTransfers[$parameterName] ?? null;
@@ -86,11 +78,6 @@ class CmsPageSortConfigBuilder implements SortConfigBuilderInterface
         return $requestParameters[$this->sortParamKey] ?? null;
     }
 
-    /**
-     * @param string|null $sortParamName
-     *
-     * @return string|null
-     */
     public function getSortDirection(?string $sortParamName): ?string
     {
         if (!$sortParamName) {
@@ -109,11 +96,6 @@ class CmsPageSortConfigBuilder implements SortConfigBuilderInterface
         return static::DIRECTION_ASC;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SortConfigTransfer $sortConfigTransfer
-     *
-     * @return void
-     */
     protected function assertSortConfigTransfer(SortConfigTransfer $sortConfigTransfer): void
     {
         $sortConfigTransfer

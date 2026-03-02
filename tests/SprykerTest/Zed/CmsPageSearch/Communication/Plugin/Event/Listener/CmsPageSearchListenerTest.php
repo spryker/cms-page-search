@@ -35,9 +35,6 @@ use Spryker\Zed\Url\Dependency\UrlEvents;
  */
 class CmsPageSearchListenerTest extends Unit
 {
-    /**
-     * @return void
-     */
     protected function _setUp(): void
     {
         parent::_setUp();
@@ -45,9 +42,6 @@ class CmsPageSearchListenerTest extends Unit
         $this->tester->mockConfigMethod('isSendingToQueue', false);
     }
 
-    /**
-     * @return void
-     */
     public function testCmsPageVersionSearchListenerStoreData(): void
     {
         $this->markTestSkipped('Requires refactoring');
@@ -73,9 +67,6 @@ class CmsPageSearchListenerTest extends Unit
         $this->assertCmsPageSearch();
     }
 
-    /**
-     * @return void
-     */
     public function testCmsPageUrlSearchListenerStoreData(): void
     {
         $this->markTestSkipped('Requires refactoring');
@@ -102,9 +93,6 @@ class CmsPageSearchListenerTest extends Unit
         $this->assertCmsPageSearch();
     }
 
-    /**
-     * @return void
-     */
     public function testCmsPageSearchListenerStoreData(): void
     {
         $this->markTestSkipped('Requires refactoring');
@@ -129,9 +117,6 @@ class CmsPageSearchListenerTest extends Unit
         $this->assertCmsPageSearch();
     }
 
-    /**
-     * @return void
-     */
     protected function assertCmsPageSearch(): void
     {
         $cmsPage = SpyCmsPageSearchQuery::create()->filterByLocale('en_US')->orderByIdCmsPageSearch()->findOneByFkCmsPage(1);

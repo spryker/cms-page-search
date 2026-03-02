@@ -26,9 +26,6 @@ class CmsPageSearchPersistenceFactory extends AbstractPersistenceFactory
         return SpyCmsPageSearchQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\Locale\Persistence\SpyLocaleQuery
-     */
     public function getLocalePropelQuery(): SpyLocaleQuery
     {
         return $this->getProvidedDependency(CmsPageSearchDependencyProvider::PROPEL_QUERY_LOCALE);

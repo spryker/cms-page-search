@@ -21,9 +21,6 @@ class SortedCmsPageSearchResultFormatterPlugin extends AbstractElasticsearchResu
      */
     public const NAME = 'sort';
 
-    /**
-     * @return string
-     */
     public function getName(): string
     {
         return static::NAME;

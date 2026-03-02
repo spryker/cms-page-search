@@ -140,31 +140,16 @@ class CmsPageSearchEventSubscriber extends AbstractPlugin implements EventSubscr
         $eventCollection->addListenerQueued(UrlEvents::ENTITY_SPY_URL_DELETE, new CmsPageUrlSearchListener(), 0, null, $this->getConfig()->getEventQueueName());
     }
 
-    /**
-     * @param \Spryker\Zed\Event\Dependency\EventCollectionInterface $eventCollection
-     *
-     * @return void
-     */
     protected function addCmsPageStoreCreateStorageListener(EventCollectionInterface $eventCollection): void
     {
         $eventCollection->addListenerQueued(CmsEvents::ENTITY_SPY_CMS_STORE_CREATE, new CmsPageStoreSearchListener(), 0, null, $this->getConfig()->getEventQueueName());
     }
 
-    /**
-     * @param \Spryker\Zed\Event\Dependency\EventCollectionInterface $eventCollection
-     *
-     * @return void
-     */
     protected function addCmsPageStoreUpdateStorageListener(EventCollectionInterface $eventCollection): void
     {
         $eventCollection->addListenerQueued(CmsEvents::ENTITY_SPY_CMS_STORE_UPDATE, new CmsPageStoreSearchListener(), 0, null, $this->getConfig()->getEventQueueName());
     }
 
-    /**
-     * @param \Spryker\Zed\Event\Dependency\EventCollectionInterface $eventCollection
-     *
-     * @return void
-     */
     protected function addCmsPageStoreDeleteStorageListener(EventCollectionInterface $eventCollection): void
     {
         $eventCollection->addListenerQueued(CmsEvents::ENTITY_SPY_CMS_STORE_DELETE, new CmsPageStoreSearchListener(), 0, null, $this->getConfig()->getEventQueueName());

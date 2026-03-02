@@ -144,13 +144,6 @@ class CmsDataPageMapBuilder implements NamedPageMapInterface
         return CmsPageSearchConstants::CMS_PAGE_RESOURCE_NAME;
     }
 
-    /**
-     * @param \Spryker\Zed\Search\Business\Model\Elasticsearch\DataMapper\PageMapBuilderInterface $pageMapBuilder
-     * @param \Generated\Shared\Transfer\PageMapTransfer $pageMapTransfer
-     * @param array $cmsPageData
-     *
-     * @return \Generated\Shared\Transfer\PageMapTransfer
-     */
     protected function addSort(PageMapBuilderInterface $pageMapBuilder, PageMapTransfer $pageMapTransfer, array $cmsPageData): PageMapTransfer
     {
         $pageMapBuilder->addStringSort($pageMapTransfer, static::COL_NAME, $cmsPageData['name']);

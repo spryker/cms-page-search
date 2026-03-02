@@ -14,11 +14,6 @@ use Spryker\Client\SearchExtension\Dependency\Plugin\SearchResultCountPluginInte
 
 class SearchElasticSearchResultCountPlugin implements SearchResultCountPluginInterface
 {
-    /**
-     * @param mixed $searchResult
-     *
-     * @return int|null
-     */
     public function findTotalCount(mixed $searchResult): ?int
     {
         if (!$searchResult instanceof ResultSet) {

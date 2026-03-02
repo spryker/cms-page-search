@@ -22,9 +22,6 @@ class SearchQueryResolver implements SearchQueryResolverInterface
     {
     }
 
-    /**
-     * @return \Spryker\Client\SearchExtension\Dependency\Plugin\QueryInterface
-     */
     public function resolve(): QueryInterface
     {
         if ($this->searchQueryPlugins === []) {

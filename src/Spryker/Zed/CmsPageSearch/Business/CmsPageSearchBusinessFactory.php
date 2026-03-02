@@ -36,9 +36,6 @@ class CmsPageSearchBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\CmsPageSearch\Business\Search\DataMapper\CmsPageSearchDataMapperInterface
-     */
     public function createCmsPageSearchDataMapper(): CmsPageSearchDataMapperInterface
     {
         return new CmsPageSearchDataMapper($this->getStoreFacade());
@@ -60,17 +57,11 @@ class CmsPageSearchBusinessFactory extends AbstractBusinessFactory
         return $this->getProvidedDependency(CmsPageSearchDependencyProvider::FACADE_CMS);
     }
 
-    /**
-     * @return \Spryker\Zed\CmsPageSearch\Dependency\Facade\CmsPageSearchToLocaleFacadeInterface
-     */
     public function getLocaleFacade(): CmsPageSearchToLocaleFacadeInterface
     {
         return $this->getProvidedDependency(CmsPageSearchDependencyProvider::FACADE_LOCALE);
     }
 
-    /**
-     * @return \Spryker\Zed\CmsPageSearch\Dependency\Facade\CmsPageSearchToStoreFacadeInterface
-     */
     public function getStoreFacade(): CmsPageSearchToStoreFacadeInterface
     {
         return $this->getProvidedDependency(CmsPageSearchDependencyProvider::FACADE_STORE);

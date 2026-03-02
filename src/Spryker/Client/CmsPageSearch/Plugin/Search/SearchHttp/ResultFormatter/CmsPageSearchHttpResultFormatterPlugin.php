@@ -20,9 +20,6 @@ class CmsPageSearchHttpResultFormatterPlugin extends AbstractPlugin implements R
      */
     public const NAME = 'cms_pages';
 
-    /**
-     * @return string
-     */
     public function getName(): string
     {
         return static::NAME;

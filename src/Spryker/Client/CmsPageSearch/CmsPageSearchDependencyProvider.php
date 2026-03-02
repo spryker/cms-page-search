@@ -70,11 +70,6 @@ class CmsPageSearchDependencyProvider extends AbstractDependencyProvider
      */
     public const PLUGINS_SEARCH_RESULT_COUNT = 'PLUGINS_SEARCH_RESULT_COUNT';
 
-    /**
-     * @param \Spryker\Client\Kernel\Container $container
-     *
-     * @return \Spryker\Client\Kernel\Container
-     */
     public function provideServiceLayerDependencies(Container $container): Container
     {
         $container = parent::provideServiceLayerDependencies($container);
@@ -93,11 +88,6 @@ class CmsPageSearchDependencyProvider extends AbstractDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Client\Kernel\Container $container
-     *
-     * @return \Spryker\Client\Kernel\Container
-     */
     protected function addSearchClient(Container $container): Container
     {
         $container->set(static::CLIENT_SEARCH, function (Container $container) {
@@ -107,11 +97,6 @@ class CmsPageSearchDependencyProvider extends AbstractDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Client\Kernel\Container $container
-     *
-     * @return \Spryker\Client\Kernel\Container
-     */
     protected function addCmsPageSearchQueryPlugin(Container $container): Container
     {
         $container->set(static::PLUGIN_CMS_PAGE_SEARCH_QUERY, function () {
@@ -121,11 +106,6 @@ class CmsPageSearchDependencyProvider extends AbstractDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Client\Kernel\Container $container
-     *
-     * @return \Spryker\Client\Kernel\Container
-     */
     protected function addCmsPageSearchResultFormatterPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_CMS_PAGE_SEARCH_RESULT_FORMATTER, function () {
@@ -135,11 +115,6 @@ class CmsPageSearchDependencyProvider extends AbstractDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Client\Kernel\Container $container
-     *
-     * @return \Spryker\Client\Kernel\Container
-     */
     protected function addCmsPageSearchQueryExpanderPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_CMS_PAGE_SEARCH_QUERY_EXPANDER, function () {
@@ -149,11 +124,6 @@ class CmsPageSearchDependencyProvider extends AbstractDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Client\Kernel\Container $container
-     *
-     * @return \Spryker\Client\Kernel\Container
-     */
     protected function addCmsPageSearchQueryCountExpanderPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_CMS_PAGE_SEARCH_COUNT_QUERY_EXPANDER, function () {
@@ -163,11 +133,6 @@ class CmsPageSearchDependencyProvider extends AbstractDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Client\Kernel\Container $container
-     *
-     * @return \Spryker\Client\Kernel\Container
-     */
     protected function addCmsPageSearchQueryPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_SEARCH_QUERY, function () {
@@ -177,11 +142,6 @@ class CmsPageSearchDependencyProvider extends AbstractDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Client\Kernel\Container $container
-     *
-     * @return \Spryker\Client\Kernel\Container
-     */
     protected function addCmsPageSearchHttpResultFormatterPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_SEARCH_HTTP_RESULT_FORMATTER, function () {
@@ -191,11 +151,6 @@ class CmsPageSearchDependencyProvider extends AbstractDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Client\Kernel\Container $container
-     *
-     * @return \Spryker\Client\Kernel\Container
-     */
     protected function addCmsPageSearchHttpQueryExpanderPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_SEARCH_HTTP_QUERY_EXPANDER, function () {
@@ -205,11 +160,6 @@ class CmsPageSearchDependencyProvider extends AbstractDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Client\Kernel\Container $container
-     *
-     * @return \Spryker\Client\Kernel\Container
-     */
     protected function addCmsPageSearchHttpQueryCountExpanderPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_SEARCH_HTTP_COUNT_QUERY_EXPANDER, function () {
@@ -219,11 +169,6 @@ class CmsPageSearchDependencyProvider extends AbstractDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Client\Kernel\Container $container
-     *
-     * @return \Spryker\Client\Kernel\Container
-     */
     protected function addSearchResultCountPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_SEARCH_RESULT_COUNT, function () {

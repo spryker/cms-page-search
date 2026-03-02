@@ -18,11 +18,6 @@ interface SortConfigBuilderInterface
      */
     public function addSort(SortConfigTransfer $sortConfigTransfer);
 
-    /**
-     * @param string|null $parameterName
-     *
-     * @return \Generated\Shared\Transfer\SortConfigTransfer|null
-     */
     public function getSortConfigTransfer(?string $parameterName): ?SortConfigTransfer;
 
     /**
@@ -37,10 +32,5 @@ interface SortConfigBuilderInterface
      */
     public function getActiveParamName(array $requestParameters): ?string;
 
-    /**
-     * @param string|null $sortParamName
-     *
-     * @return string|null
-     */
     public function getSortDirection(?string $sortParamName): ?string;
 }

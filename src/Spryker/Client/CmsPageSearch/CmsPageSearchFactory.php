@@ -24,11 +24,6 @@ use Spryker\Shared\Kernel\StrategyResolver;
  */
 class CmsPageSearchFactory extends AbstractFactory
 {
-    /**
-     * @param string $searchString
-     *
-     * @return \Spryker\Client\SearchExtension\Dependency\Plugin\QueryInterface
-     */
     public function createCmsPageSearchQuery(string $searchString): QueryInterface
     {
         $searchQuery = $this->createSearchQueryResolver()->resolve();
@@ -40,9 +35,6 @@ class CmsPageSearchFactory extends AbstractFactory
         return $searchQuery;
     }
 
-    /**
-     * @return \Spryker\Client\CmsPageSearch\Dependency\Client\CmsPageSearchToSearchBridgeInterface
-     */
     public function getSearchClient(): CmsPageSearchToSearchBridgeInterface
     {
         return $this->getProvidedDependency(CmsPageSearchDependencyProvider::CLIENT_SEARCH);
@@ -66,9 +58,6 @@ class CmsPageSearchFactory extends AbstractFactory
         return $this->getProvidedDependency(CmsPageSearchDependencyProvider::PLUGINS_SEARCH_QUERY);
     }
 
-    /**
-     * @return \Spryker\Client\CmsPageSearch\SearchQueryResolver\SearchQueryResolverInterface
-     */
     public function createSearchQueryResolver(): SearchQueryResolverInterface
     {
         return new SearchQueryResolver($this->getCmsPageSearchQueryPlugins(), $this->getCmsPageSearchQueryPlugin());
@@ -104,9 +93,6 @@ class CmsPageSearchFactory extends AbstractFactory
         ], CmsPageSearchConfig::SEARCH_STRATEGY_ELASTICSEARCH);
     }
 
-    /**
-     * @return \Spryker\Client\CmsPageSearch\Config\SortConfigBuilderInterface
-     */
     public function createSortConfigBuilder(): SortConfigBuilderInterface
     {
         $cmsPageSortConfigBuilder = new CmsPageSortConfigBuilder();
@@ -116,9 +102,6 @@ class CmsPageSearchFactory extends AbstractFactory
         return $cmsPageSortConfigBuilder;
     }
 
-    /**
-     * @return \Spryker\Client\CmsPageSearch\Config\PaginationConfigBuilderInterface
-     */
     public function createPaginationConfigBuilder(): PaginationConfigBuilderInterface
     {
         $cmsPaginationConfigBuilder = new CmsPagePaginationConfigBuilder();

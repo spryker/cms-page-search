@@ -31,17 +31,11 @@ class CmsPageSuggestionsSearchHttpResultFormatterPlugin extends AbstractPlugin i
      */
     protected const CMS_PAGE_SOURCE_IDENTIFIER = 'cms-page';
 
-    /**
-     * @return string
-     */
     public function getGroupName(): string
     {
         return static::GROUP_NAME;
     }
 
-    /**
-     * @return string
-     */
     public function getName(): string
     {
         return static::NAME;

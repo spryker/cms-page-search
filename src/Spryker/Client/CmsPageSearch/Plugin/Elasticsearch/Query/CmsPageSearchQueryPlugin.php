@@ -113,17 +113,11 @@ class CmsPageSearchQueryPlugin extends AbstractPlugin implements QueryInterface,
         $this->query = $this->createSearchQuery();
     }
 
-    /**
-     * @return string
-     */
     public function getSearchString(): string
     {
         return $this->searchString;
     }
 
-    /**
-     * @return \Elastica\Query
-     */
     protected function createSearchQuery(): Query
     {
         $query = new Query();
@@ -133,11 +127,6 @@ class CmsPageSearchQueryPlugin extends AbstractPlugin implements QueryInterface,
         return $query;
     }
 
-    /**
-     * @param string $searchString
-     *
-     * @return \Elastica\Query\AbstractQuery
-     */
     protected function createFulltextSearchQuery(string $searchString): AbstractQuery
     {
         $fields = [
@@ -153,11 +142,6 @@ class CmsPageSearchQueryPlugin extends AbstractPlugin implements QueryInterface,
         return $matchQuery;
     }
 
-    /**
-     * @param \Elastica\Query\AbstractQuery $matchQuery
-     *
-     * @return \Elastica\Query\BoolQuery
-     */
     protected function createBoolQuery(AbstractQuery $matchQuery): BoolQuery
     {
         $boolQuery = new BoolQuery();
@@ -167,11 +151,6 @@ class CmsPageSearchQueryPlugin extends AbstractPlugin implements QueryInterface,
         return $boolQuery;
     }
 
-    /**
-     * @param \Elastica\Query $baseQuery
-     *
-     * @return \Elastica\Query
-     */
     protected function addFulltextSearchToQuery(Query $baseQuery): Query
     {
         if ($this->searchString) {
@@ -185,11 +164,6 @@ class CmsPageSearchQueryPlugin extends AbstractPlugin implements QueryInterface,
         return $baseQuery;
     }
 
-    /**
-     * @param \Elastica\Query\BoolQuery $boolQuery
-     *
-     * @return void
-     */
     protected function setTypeFilter(BoolQuery $boolQuery): void
     {
         $typeFilter = $this->getMatchQuery()->setField(PageIndexMap::TYPE, static::TYPE);
@@ -197,11 +171,6 @@ class CmsPageSearchQueryPlugin extends AbstractPlugin implements QueryInterface,
         $boolQuery->addMust($typeFilter);
     }
 
-    /**
-     * @param \Elastica\Query $baseQuery
-     *
-     * @return void
-     */
     protected function setSuggestion(Query $baseQuery): void
     {
         $suggest = new Suggest();
@@ -210,9 +179,6 @@ class CmsPageSearchQueryPlugin extends AbstractPlugin implements QueryInterface,
         $baseQuery->setSuggest($suggest);
     }
 
-    /**
-     * @return void
-     */
     protected function setupDefaultSearchContext(): void
     {
         $searchContextTransfer = new SearchContextTransfer();
@@ -221,17 +187,11 @@ class CmsPageSearchQueryPlugin extends AbstractPlugin implements QueryInterface,
         $this->searchContextTransfer = $searchContextTransfer;
     }
 
-    /**
-     * @return bool
-     */
     protected function hasSearchContext(): bool
     {
         return (bool)$this->searchContextTransfer;
     }
 
-    /**
-     * @return int
-     */
     protected function getFullTextBoostedBoostingValue(): int
     {
         return $this->getFactory()->getConfig()->getFullTextBoostedBoostingValue();

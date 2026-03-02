@@ -21,9 +21,6 @@ class RawCmsPageSearchResultFormatterPlugin extends AbstractElasticsearchResultF
      */
     public const NAME = 'cms_pages';
 
-    /**
-     * @return string
-     */
     public function getName(): string
     {
         return static::NAME;

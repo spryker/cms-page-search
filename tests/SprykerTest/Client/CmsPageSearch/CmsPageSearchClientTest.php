@@ -395,9 +395,6 @@ class CmsPageSearchClientTest extends Unit
         return $this->createMock(CmsPageSearchFactory::class);
     }
 
-    /**
-     * @return \PHPUnit\Framework\MockObject\MockObject|\Spryker\Client\SearchExtension\Dependency\Plugin\QueryInterface
-     */
     protected function createQueryMock(): MockObject|QueryInterface
     {
         return $this->createMock(QueryInterface::class);
@@ -434,11 +431,6 @@ class CmsPageSearchClientTest extends Unit
         return $mock;
     }
 
-    /**
-     * @param int $totalHits
-     *
-     * @return \Elastica\ResultSet
-     */
     protected function createSearchResultObjectMock(int $totalHits): ResultSet
     {
         $searchResultMock = $this->createMock(ResultSet::class);
@@ -447,9 +439,6 @@ class CmsPageSearchClientTest extends Unit
         return $searchResultMock;
     }
 
-    /**
-     * @return \PHPUnit\Framework\MockObject\MockObject|\Spryker\Client\SearchExtension\Dependency\Plugin\SearchResultCountPluginInterface
-     */
     protected function createSearchResultCountPluginMock(): MockObject|SearchResultCountPluginInterface
     {
         return $this->createMock(SearchResultCountPluginInterface::class);

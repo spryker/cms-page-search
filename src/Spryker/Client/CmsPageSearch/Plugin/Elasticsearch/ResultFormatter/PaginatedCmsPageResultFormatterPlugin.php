@@ -21,9 +21,6 @@ class PaginatedCmsPageResultFormatterPlugin extends AbstractElasticsearchResultF
      */
     protected const NAME = 'pagination';
 
-    /**
-     * @return string
-     */
     public function getName(): string
     {
         return static::NAME;

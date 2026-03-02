@@ -13,8 +13,5 @@ use Spryker\Client\SearchExtension\Dependency\Plugin\QueryInterface;
 
 interface SearchQueryResolverInterface
 {
-    /**
-     * @return \Spryker\Client\SearchExtension\Dependency\Plugin\QueryInterface
-     */
     public function resolve(): QueryInterface;
 }

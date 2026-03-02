@@ -170,24 +170,11 @@ class CmsPageSearchWriter implements CmsPageSearchWriterInterface
         $cmsPageCollection->delete();
     }
 
-    /**
-     * @param \Orm\Zed\CmsPageSearch\Persistence\SpyCmsPageSearch $cmsPageSearchEntity
-     *
-     * @return void
-     */
     protected function deleteSearchEntity(SpyCmsPageSearch $cmsPageSearchEntity): void
     {
         $cmsPageSearchEntity->delete();
     }
 
-    /**
-     * @param \Orm\Zed\Cms\Persistence\SpyCmsPage $cmsPageEntity
-     * @param \Orm\Zed\CmsPageSearch\Persistence\SpyCmsPageSearch $cmsPageSearchEntity
-     * @param string $localeName
-     * @param string|null $storeName
-     *
-     * @return void
-     */
     protected function storeDataSet(
         SpyCmsPage $cmsPageEntity,
         SpyCmsPageSearch $cmsPageSearchEntity,
@@ -210,13 +197,6 @@ class CmsPageSearchWriter implements CmsPageSearchWriterInterface
         $cmsPageSearchEntity->save();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\LocaleCmsPageDataTransfer $cmsPageDataTransfer
-     * @param string $localeName
-     * @param string|null $storeName
-     *
-     * @return array
-     */
     public function mapToSearchData(LocaleCmsPageDataTransfer $cmsPageDataTransfer, string $localeName, ?string $storeName = null): array
     {
         return $this->cmsPageSearchDataMapper->mapCmsDataToSearchData(
@@ -236,11 +216,6 @@ class CmsPageSearchWriter implements CmsPageSearchWriterInterface
         return $this->queryContainer->queryCmsPageVersionByIds($cmsPageIds)->find()->getData();
     }
 
-    /**
-     * @param array $cmsPageIds
-     *
-     * @return array
-     */
     protected function findCmsPageSearchEntities(array $cmsPageIds): array
     {
         $cmsPageSearchEntities = $this->queryContainer->queryCmsPageSearchEntities($cmsPageIds)->find();
@@ -269,13 +244,6 @@ class CmsPageSearchWriter implements CmsPageSearchWriterInterface
         return '';
     }
 
-    /**
-     * @param \Orm\Zed\Cms\Persistence\SpyCmsPage $cmsPageEntity
-     * @param string $localeName
-     * @param string|null $storeName
-     *
-     * @return \Generated\Shared\Transfer\LocaleCmsPageDataTransfer
-     */
     protected function getLocaleCmsPageDataTransfer(
         SpyCmsPage $cmsPageEntity,
         string $localeName,
@@ -306,11 +274,6 @@ class CmsPageSearchWriter implements CmsPageSearchWriterInterface
         return $localeCmsPageDataTransfer;
     }
 
-    /**
-     * @param \DateTime|null $dateTime
-     *
-     * @return string|null
-     */
     protected function convertDateTimeToString(?DateTime $dateTime = null): ?string
     {
         if (!$dateTime) {
@@ -386,12 +349,6 @@ class CmsPageSearchWriter implements CmsPageSearchWriterInterface
         return [$pairs, $cmsPageSearchEntities];
     }
 
-    /**
-     * @param array $cmsPageSearchEntities
-     * @param array $pairs
-     *
-     * @return array
-     */
     protected function pairRemainingCmsPageSearchEntities(array $cmsPageSearchEntities, array $pairs): array
     {
         array_walk_recursive($cmsPageSearchEntities, function (SpyCmsPageSearch $cmsPageSearchEntity) use (&$pairs) {
