@@ -41,4 +41,24 @@ class CmsPageSearchConstants
      * @var string
      */
     public const CMS_PAGE_RESOURCE_NAME = 'cms_page_search';
+
+    /**
+     * Specification:
+     * - Queue name as used for processing publish cms block messages
+     *
+     * @api
+     *
+     * @var string
+     */
+    public const string CMS_PUBLISH_QUEUE = 'publish.cms';
+
+    /**
+     * Specification:
+     * - Queue name as used for error publish cms block messages
+     *
+     * @api
+     *
+     * @var string
+     */
+    public const string CMS_PUBLISH_ERROR_QUEUE = 'publish.cms.error';
 }

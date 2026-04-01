@@ -326,7 +326,7 @@ class CmsPageSearchWriter implements CmsPageSearchWriterInterface
         array $pairs
     ): array {
         $idCmsPage = $cmsPageEntity->getIdCmsPage();
-        $cmsPageStores = $cmsPageEntity->getSpyCmsPageStores();
+        $cmsPageStores = $this->getPageStores($cmsPageEntity);
 
         foreach ($localeNames as $localeName) {
             foreach ($cmsPageStores as $cmsPageStore) {
@@ -371,5 +371,21 @@ class CmsPageSearchWriter implements CmsPageSearchWriterInterface
         $localeTransfers = $this->localeFacade->getLocaleCollection();
 
         return array_keys($localeTransfers);
+    }
+
+    /**
+     * @param \Orm\Zed\Cms\Persistence\SpyCmsPage $cmsPageEntity
+     *
+     * @return array<int, \Orm\Zed\Cms\Persistence\SpyCmsPageStore>
+     */
+    public function getPageStores(SpyCmsPage $cmsPageEntity): array
+    {
+        $cmsPageStores = $cmsPageEntity->getSpyCmsPageStores();
+        $result = [];
+        foreach ($cmsPageStores as $cmsPageStore) {
+            $result[$cmsPageStore->getFkStore()] = $cmsPageStore;
+        }
+
+        return $result;
     }
 }
