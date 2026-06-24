@@ -66,6 +66,8 @@ class CmsPageSearchConfig extends AbstractBundleConfig
     protected const FULL_TEXT_BOOSTED_BOOSTING_VALUE = 'SEARCH_ELASTICSEARCH:FULL_TEXT_BOOSTED_BOOSTING_VALUE';
 
     /**
+     * @api
+     *
      * Strategy key for default search implementation.
      *
      * @var string
@@ -73,6 +75,8 @@ class CmsPageSearchConfig extends AbstractBundleConfig
     public const SEARCH_STRATEGY_ELASTICSEARCH = 'TYPE_STRATEGY_ELASTICSEARCH';
 
     /**
+     * @api
+     *
      * Strategy key for HTTP search implementation.
      *
      * @uses \Spryker\Shared\SearchHttp\SearchHttpConfig::TYPE_SEARCH_HTTP
@@ -82,6 +86,8 @@ class CmsPageSearchConfig extends AbstractBundleConfig
     public const SEARCH_STRATEGY_SEARCH_HTTP = 'TYPE_SEARCH_HTTP';
 
     /**
+     * @api
+     *
      * @var string
      */
     public const SOURCE_IDENTIFIER_CMS_PAGE = 'cms-page';
